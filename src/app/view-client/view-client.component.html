@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<div class="container">
+  <h2 class=h2>View Of Our Client Meeting Schedule</h2>
+            
+  <table class="table">
+    <thead >
+       <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>ADDRESS</th>
+    <th>PASSWORD</th>
+    <th>REPEAT_PASSWORD</th>
+    <th>MEETING_TOPIC</th>
+    <th>NUMBER_OF_PEOPLE</th>
+    <th>START_TIME</th>
+    <th>EDIT_ACTION</th>
+    <th>DELETE_BUTTON</th>
+</tr>
+</thead>
+
+    <tbody>
+        <tr *ngFor="let clnt of clients" >
+            <td>{{clnt.client_id}}</td>
+            <td>{{clnt.name}}</td>
+            <td>{{clnt.email}}</td>
+            <td>{{clnt.address}}</td>
+            <td>{{clnt.password}}</td>
+            <td>{{clnt.repeat_password}}</td>
+            <td>{{clnt.meeting_topic}}</td>
+            <td>{{clnt.number_of_people}}</td>
+            <!-- dd/MM/yyyy HH:mm <td>{{clnt.start_time}}</td> --yyyy-MM-ddThh:mm:ss>  -->
+            <td>{{clnt.start_time|date:'dd/MM/yyyy HH:mm'}}</td>
+            <td><button name="edit" routerLink="/edit/{{clnt.client_id}}">Edit</button></td>
+             <td><button name="delete" (click)="deleteClient(clnt.client_id)">Delete</button></td>   
+        </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

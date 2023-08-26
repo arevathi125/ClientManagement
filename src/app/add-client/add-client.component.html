@@ -1,0 +1,47 @@
+
+<h1>Create a Client</h1>
+<h3>Please fill in this form to create a client.</h3>
+<div>
+    <label> <b>Id</b></label><br>
+    <input type="text" name="id" Placeholder="Enter Id" [(ngModel)]="id"/>
+</div>
+<div>
+    <label> <b>Name</b></label><br>
+    <input type="text" name="name" Placeholder="Enter Name" [(ngModel)]="name"/>
+</div>
+<div>
+    <label> <b>Email</b></label><br>
+    <input type="email" name="email" Placeholder="Enter Email" [(ngModel)]="email"/>  
+</div>
+<div>
+    <label> <b>Address</b></label><br>
+    <input type="text" name="address" Placeholder="Enter Address" [(ngModel)]="address"/>
+</div>
+<div>
+    <label> <b>Password</b></label><br>
+    <input type="password" name="password" Placeholder="Enter Password" [(ngModel)]="password"/>
+</div>
+<div>
+    <label> <b>Repeat Password</b></label><br>
+    <input type="password" name="repeat-password" Placeholder="Repeat password" [(ngModel)]="repeatPassword"/>
+</div> 
+
+<h1>Create a Meeting Schedule</h1>
+<div>
+    <label> <b>Meeting Topic</b></label><br>
+    <input type="text" name="meeting-topic" Placeholder="Enter Meeting Topic" [(ngModel)]="meetingTopic"/>
+</div>
+<div>
+    <label> <b>Number Of People</b></label><br>
+    <input type="number" name="Number-Of-People" Placeholder="Enter Number Of People" [(ngModel)]="numberOfPeople"/>
+</div>
+<div>
+    <label> <b>Start Time</b></label><br>
+     <!-- <input type="datetime" name="start-Time"  [(ngModel)]="startTime"/>  -->
+    <input type="datetime-local" name="start-Time"  [(ngModel)]="startTime"/>
+</div>
+<button name="register" (click)="register()">Register</button>
+<h4 name="message">{{message}}</h4>
+
+
+
